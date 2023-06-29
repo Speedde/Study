@@ -1,61 +1,61 @@
 'use strict';
-let numberOfFilms;
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
-    while (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
-    }
-}
-start();
-const personalMovieDB = {
-        count: numberOfFilms,
-        movies: {},
-        actors: {},
-        genres: [],
-        privat: false
-    };
-function remembeberMyFilms () {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-              b = +prompt('На сколько его оцените', '');   
-        if (a != null && b != null && a != '' && b != '' & a.length < 20) {
-            personalMovieDB.movies[a] = b;
-        } else {
-            i--;
-        }
-    }
-}
-remembeberMyFilms ();
+// let numberOfFilms;
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '').trim();
+//     while (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+//     }
+// }
+// start();
+// const personalMovieDB = {
+//         count: numberOfFilms,
+//         movies: {},
+//         actors: {},
+//         genres: [],
+//         privat: false
+//     };
+// function remembeberMyFilms () {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+//               b = +prompt('На сколько его оцените', '').trim();   
+//         if (a != null && b != null && a != '' && b != '' & a.length < 20 && !isNaN(b)) {
+//             personalMovieDB.movies[a] = b;
+//         } else {
+//             i--;
+//         }
+//     }
+// }
+// remembeberMyFilms ();
 // const a = prompt('Один из последних просмотренных фильмов?', ''),
 //       b = +prompt('На сколько его оцените', ''),
 //       c = prompt('Один из последних просмотренных фильмов?', ''),
 //       d = +prompt('На сколько его оцените', '');
 // personalMovieDB.movies[a] = b;
 // personalMovieDB.movies[c] = d;
-function detectPersonalLevel() {
-    if (personalMovieDB['count'] < 10) {
-    console.log('Мало фильмов');
-    } else if (personalMovieDB['count'] >= 10 && personalMovieDB['count'] < 30) {
-    console.log('Класический зритель');
-    } else if (personalMovieDB['count'] >= 30) {
-    console.log('Вы киноман');
-    } else {
-    console.log('Ошибка чтения');
-    };
-}
-detectPersonalLevel();
-function showMyDB() {
-    if (personalMovieDB.privat === false) {
-        console.log(personalMovieDB);
-    }
-}
-showMyDB();
-function writeYourGenres() {
-    for (let i = 0; i < 3; i++) {
-        personalMovieDB.genres[i] = prompt(`Ваш любтмый жанр под номером ${i + 1}`, '');
-    }
-}
-writeYourGenres();
+// function detectPersonalLevel() {
+//     if (personalMovieDB['count'] < 10) {
+//     console.log('Мало фильмов');
+//     } else if (personalMovieDB['count'] >= 10 && personalMovieDB['count'] < 30) {
+//     console.log('Класический зритель');
+//     } else if (personalMovieDB['count'] >= 30) {
+//     console.log('Вы киноман');
+//     } else {
+//     console.log('Ошибка чтения');
+//     };
+// }
+// detectPersonalLevel();
+// function showMyDB() {
+//     if (personalMovieDB.privat === false) {
+//         console.log(personalMovieDB);
+//     }
+// }
+// showMyDB();
+// function writeYourGenres() {
+//     for (let i = 0; i < 3; i++) {
+//         personalMovieDB.genres[i] = prompt(`Ваш любтмый жанр под номером ${i + 1}`, '');
+//     }
+// }
+// writeYourGenres();
 
 // let i = 0;
 // while (i < 2) {
@@ -240,5 +240,115 @@ writeYourGenres();
 //  const fil = 'My name is-Jenny';
 // //  console.log(fil.indexOf('is'));
 // //  console.log(fil.slice(8, 10));
-// fil = fil.slice(8, 10);
-// console.log(fil);
+
+// Практичні завдання №29
+// №1
+// function calculateVolumeAndArea(a) {
+//     if (!Number.isInteger(a) || a <= 0 || isNaN(a)) {
+//         return 'При вычислении произошла ошибка'
+//     } else {
+//         const Area = a * a *6,
+//               Volume = a * a * a;
+//         return `'Объем куба: ${Volume}, площадь всей поверхности: ${Area}'`;
+//     }
+// }
+// // calculateVolumeAndArea(5);
+// console.log(calculateVolumeAndArea(5));
+// №2
+// function getCoupeNumber(a) {
+//     if (!Number.isInteger(a) || a < 0 || isNaN(a)) {
+//         return "Ошибка. Проверьте правильность введенного номера места"
+//     } else if (a > 36 || a === 0) {
+//         return "Таких мест в вагоне не существует"
+//     }
+//      for (let i = 1; i <= 9; i++) {
+//         let b = a / 4;
+//         if (b <= i) {return `${i}`} else continue
+//     }  
+//     // return Math.ceil(a / 4);  
+// }
+// console.log(getCoupeNumber(1));
+// №3
+// function getTimeFromMinutes(a) {
+//     if (typeof (a) !== 'number' || a < 0 || !Number.isInteger(a)) {
+//         return "Ошибка, проверьте данные";
+//     }
+//     let b = parseInt(a / 60);
+//     let c = a % 60; 
+//     if (b === 1) {
+//         return `Это ${b} час и ${c} минут`
+//     } else if (b > 1 && b < 5) {
+//         return `Это ${b} часа и ${c} минут`
+//     } else if (b >= 5 || b === 0) {
+//         return `Это ${b} часов и ${c} минут`
+//     }
+// }
+// console.log(getTimeFromMinutes(20));
+//  №4
+// function findMaxNumber(a, b, c, d) {
+//     if (typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number' || typeof(d) !== 'number' || a ===undefined || b === undefined || c ===undefined || d ===undefined) {
+//         return 0
+//     }
+//     return Math.max(a, b, c, d);
+// }   
+// console.log(findMaxNumber(1, 5, '6', '10'));
+
+// function fib(num) {
+//     if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++) {
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//         } else {
+//             result += `${first} `;
+//         }
+
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+//     return result;
+// }
+
+// console.log(fib(5));
+const rep = 1;
+const opt = {
+    do: 'help',
+    re: 12,
+    me: 'prvat',
+    fa: function() {
+        console.log(rep);
+    }
+};
+console.log(opt.fa());
+// console.log(Object.keys(opt.fa));
+// for (let key in opt) {
+//     if (typeof(opt[key]) === 'object') {
+//         for (let i in opt[key]) {
+//             console.log(` Значення ${i} в обэкті ${opt[key][i]}`);
+//     }
+//     }else {
+//         console.log(` Значення ${key} в обєкті ${opt[key]}`);
+//     }  
+// }
+function free(a, b) {
+    a++;
+    let arr = [];
+    for (let j = 0; j < l; j++) {
+        arr[j] = a + b(l);
+    }
+    return arr;
+}
+const b = function(l) {
+    let z = 1;
+    for (let i = 1; i < l; i++) {
+        z = z**2;
+        z++;
+    } return z;
+}
+console.log(free(2, b(3)));
