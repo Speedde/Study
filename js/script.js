@@ -316,16 +316,16 @@
 // }
 
 // console.log(fib(5));
-const rep = 1;
-const opt = {
-    do: 'help',
-    re: 12,
-    me: 'prvat',
-    fa: function() {
-        console.log(rep);
-    }
-};
-console.log(opt.fa());
+// const rep = 1;
+// const opt = {
+//     do: 'help',
+//     re: 12,
+//     me: 'prvat',
+//     fa: function() {
+//         console.log(rep);
+//     }
+// };
+// console.log(opt.fa());
 // console.log(Object.keys(opt.fa));
 // for (let key in opt) {
 //     if (typeof(opt[key]) === 'object') {
@@ -335,20 +335,110 @@ console.log(opt.fa());
 //     }else {
 //         console.log(` Значення ${key} в обєкті ${opt[key]}`);
 //     }  
+// } 
+// let A = [5, 12, 56, 3, 20, 38, 21, 49],
+//     t = 57;
+// function LinearSearch(t,A)      // t - искомый элемент,
+// {                               // A - массив, в котором ищем.
+//     let n = A.length; 
+//     // let i = 0;
+//     // A[n] = t;
+//     for (let i = 0; i < n; i++) {
+//         if (A[i] === t) return i;
+//         else if (A[i] !== t && i === n - 1) return -1;
+//     }
+//     // while (A[ i ] !== t) i++;
+//     // console.log(i)                            
+//     // if (i < n) return i;          // На выходе индекс искомого элемента.
+//     // else return -1;               // Если искомого элемента нет в массиве, то -1.
 // }
-function free(a, b) {
-    a++;
-    let arr = [];
-    for (let j = 0; j < l; j++) {
-        arr[j] = a + b(l);
-    }
-    return arr;
-}
-const b = function(l) {
-    let z = 1;
-    for (let i = 1; i < l; i++) {
-        z = z**2;
-        z++;
-    } return z;
-}
-console.log(free(2, b(3)));
+// console.log(LinearSearch(t,A));
+// let A = [5, 12, 56, 3, 20, 38, 21, 49];
+// A = A.sort((a, b) => {return a - b;});
+// console.log(A);
+// function BinarySearch(t, A)         // t - искомый элемент, // A - упорядоченный массив, в котором ищем.
+// {   let j = A.length - 1,
+//         k;
+//     for (let i = 0; i <= j;) {
+//         k = Math.floor((i + j) / 2);
+//         if (A[k] === t) return k;
+//         if (A[k] > t) {j = k - 1} else {i = k + 1}; 
+//     } 
+//     return -1;                        
+    // let i = 0, j = A.length-1, k;   
+
+    // while (i <= j)
+    // {  k = Math.floor((i+j)/2);
+    //    if (t === A[k]) return k;
+    //    else if (t < A[k]) j = k-1;
+    //    else i = k+1;
+    // }
+    //                                На выходе индекс искомого элемента.
+    // return -1;                     // Если искомого элемента нет в массиве, то -1.
+// }
+// console.log(BinarySearch(-141, A));
+// let A = [5, 12, 56, 3, 20, 38, 21, 49];
+// A = A.sort((a, b) => {return a - b;});
+// function BinarySearch(t,A)       // t - искомый элемент,
+// {                                // A - упорядоченный массив, в котором ищем.
+//     let i = 0, j = A.length, k; 
+                                 
+//     while (i < j)                
+//     {  k = Math.floor((i+j)/2);
+//        if (t <= A[k]) j = k;
+//        else i = k+1;
+//     }
+   
+//     if (A[ i ] === t) return i;     // На выходе индекс искомого элемента.
+//     else return -1;                 // Если искомого элемента нет в массиве, то -1.
+// }
+// console.log(BinarySearch(21, A));
+
+// Робота з об'єктами
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             // js: '20%',
+//             // php: '10%'
+//         },
+//         exp: '1 month'
+//     }
+    // showAgeAndLangs: function(plan) {
+        // const {age} = plan;
+        // const {languages} = plan.skills;
+        // let str = `Мне ${age} и я владею языками: `;
+
+        // languages.forEach(function(lang) {
+        //     str += `${lang.toUpperCase()} `;
+        // });
+
+        // return str;
+        // let {languages} = plan['skills'];
+        // let lang = languages.join(' ').toUpperCase();
+        // return `Мне ${plan.age} и я владею языками: ${lang}` 
+
+//     }    
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+// function showExperience(plan) {
+//     let {exp} = plan['skills'];
+//     return `${exp}`;
+// }
+// function showProgrammingLangs(plan) {
+//     let {programmingLangs} = plan['skills'];
+//     // let langProgr = Object.keys(programmingLangs);
+//     let str = '';
+//     for (let key in programmingLangs) {
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//     }
+//     if (langProgr.length === 0) return str;
+//     for (let i = 0; i < langProgr.length; i++ ) {
+//         str += `Язык ${langProgr[i]} изучен на ${programmingLangs[langProgr[i]]}`;
+//         str += '\n';
+//     }
+//     return str;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
